@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Exemplo de layout de uma calculadora com SASS e CSS 3" />
+        <title>Calculadora</title>
+        <link rel="shortcut icon" href="assets/images/calculate.svg" type="image/x-icon" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <div id="calculadora">
+            <img src="assets/images/logo-hcode.svg" alt="Logo Hcode" />
+            <div id="tela">    
+                <div id="display">
+                    <svg id="brilho" width="173" height="81" viewBox="0 0 173 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.220468 13.0004C-1.79372 -0.262551 11.4376 0.00038147 11.4376 0.00038147L172.938 0.000382425L121.576 85.0004H8.93759C3.43762 85.0004 -1.06241 77.5004 0.220468 73.0004V13.0004Z" fill="url(#brilho-linear)"/>
+                        <defs>
+                            <linearGradient id="brilho-linear" x1="-0.282927" y1="38.3729" x2="150.782" y2="39.3517" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0.1"/>
+                                <stop offset="1" stop-color="white" stop-opacity="0.2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div id="datetime">
+                        <div>
+                            <time>0:0</time>
+                            <img src="assets/images/audio.svg" alt="Audio" id="audio" />
+                        </div>
+                        <div>1 janeiro 2000</div>
+                    </div>
+                    <div id="values">0</div>
+                </div>
+            </div>
+            <div id="teclado">
+                <button type="button" id="limpar" class="orange">AC</button>
+                <button type="button" id="desfazer" class="orange">CE</button>
+                <button type="button" data-valor="%" id="porcentagem">%</button>
+                <button type="button" data-valor="/" id="divisao">÷</button>
+                <button type="button" data-valor="7" id="sete">7</button>
+                <button type="button" data-valor="8" id="oito">8</button>
+                <button type="button" data-valor="9" id="nove">9</button>
+                <button type="button" data-valor="*" id="multiplicacao">x</button>
+                <button type="button" data-valor="4" id="quatro">4</button>
+                <button type="button" data-valor="5" id="cinco">5</button>
+                <button type="button" data-valor="6" id="seis">6</button>
+                <button type="button" data-valor="-" id="subtracao">-</button>
+                <button type="button" data-valor="1" id="um">1</button>
+                <button type="button" data-valor="2" id="dois">2</button>
+                <button type="button" data-valor="3" id="tres">3</button>
+                <button type="button" data-valor="+" id="adicao">+</button>
+                <button type="button" data-valor="0" id="zero">0</button>
+                <button type="button" data-valor="." id="ponto">.</button>
+                <button type="button" data-valor="=" id="igual">=</button>
+            </div>
+        </div>
+        <script type="module" src="assets/scripts/app.js"></script>
+    </body>
+</html>

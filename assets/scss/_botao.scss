@@ -1,0 +1,12 @@
+@use "sass:color";
+
+@mixin botaoCor($cor: #525252, $alpha: -0.1) {
+    background: linear-gradient(90.39deg, $cor 0.3%, color.scale($cor, $lightness: 30%) 99.63%);
+    border: 2px solid color.adjust($cor, $lightness: -10%);
+    &:hover {
+        background: linear-gradient(90.39deg, color.adjust($cor, $alpha: -0.1) 0.3%, color.adjust($cor, $lightness: 5%, $alpha: -0.1) 99.63%);
+    }
+    &:active {
+        background: linear-gradient(90.39deg, color.adjust($cor, $alpha: 1) 0.3%, color.adjust($cor, $alpha: 1) 99.63%);
+    }
+}

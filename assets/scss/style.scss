@@ -1,0 +1,19 @@
+@use "util";
+@use "calculadora";
+
+@font-face {
+    font-family: "Digital";
+    src: url("../fonts/digital-7.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include util.flex-center;
+    margin: 0;
+    height: 100vh;
+    font-family: sans-serif;
+    color: #333;
+}
