@@ -60,8 +60,15 @@ export default class CalculadoraControle {
         this.operacao.adicionar(valor)
     }
     adicionarNumero(numero: number): void {
+        if(isNaN(Number(this.operacao.ultimaPosicao))) {
+            this.adicionarOperacao(numero.toString());
+        } else {
+            numero = Number(this.operacao.ultimaPosicao.toString() + numero.toString())
+            this.operacao.ultimaPosicao = numero.toString()
+        }
+
+
         this.tela.conteudo = numero.toString();
-        this.adicionarOperacao(numero.toString());
     }
 
     adicionarOperador(operador: string): void {

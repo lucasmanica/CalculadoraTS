@@ -29,6 +29,13 @@ export default class Operacao {
         }
         return resultado;
     }
+    get ultimaPosicao() {
+        return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";
+    }
+    set ultimaPosicao(valor) {
+        const ultimoIndex = this.operacao.length ? this.operacao.length - 1 : 0;
+        this.operacao[ultimoIndex] = valor;
+    }
     get length() {
         return this.operacao.length;
     }
