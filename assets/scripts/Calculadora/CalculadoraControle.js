@@ -4,7 +4,9 @@ import Operacao from "./Operacao.js";
 export default class CalculadoraControle {
     tela;
     operacao;
-    constructor(tela = new Tela(), operacao = new Operacao()) {
+    constructor(tela = new Tela(), operacao = new Operacao({
+        onCalculado: (resultado) => this.tela.conteudo = resultado
+    })) {
         this.tela = tela;
         this.operacao = operacao;
         new DataHora();
@@ -42,12 +44,16 @@ export default class CalculadoraControle {
                     case "porcentagem":
                         break;
                     case "igual":
+                        this.calcular();
                         break;
                     default:
                         break;
                 }
             });
         });
+    }
+    calcular() {
+        this.operacao.calcular();
     }
     adicionarOperacao(valor) {
         this.operacao.adicionar(valor);
