@@ -38,7 +38,8 @@ export default class CalculadoraControle {
                         break;
                     case "ponto": 
                         break;
-                    case "limpar": 
+                    case "limpar":
+                        this.limpar(); 
                         break;
                     case "desfazer": 
                         break;
@@ -66,8 +67,6 @@ export default class CalculadoraControle {
             numero = Number(this.operacao.ultimaPosicao.toString() + numero.toString())
             this.operacao.ultimaPosicao = numero.toString()
         }
-
-
         this.tela.conteudo = numero.toString();
     }
 
@@ -81,6 +80,9 @@ export default class CalculadoraControle {
                 this.adicionarOperacao(operador);
             }
         }
-
+    }
+    limpar():void {
+        this.tela.conteudo = "0";
+        this.operacao.limpar();
     }
 }

@@ -38,6 +38,7 @@ export default class CalculadoraControle {
                     case "ponto":
                         break;
                     case "limpar":
+                        this.limpar();
                         break;
                     case "desfazer":
                         break;
@@ -80,5 +81,9 @@ export default class CalculadoraControle {
                 this.adicionarOperacao(operador);
             }
         }
+    }
+    limpar() {
+        this.tela.conteudo = "0";
+        this.operacao.limpar();
     }
 }

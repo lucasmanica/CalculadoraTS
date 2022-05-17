@@ -10,6 +10,9 @@ export default class Operacao {
     ) {
         this.onCalculado = opts.onCalculado
     }
+    limpar(): void {
+        this.operacao = [""]
+    }
     adicionar(valor: string): number {
         if (this.operacao.length === 3) {
             this.calcular();
