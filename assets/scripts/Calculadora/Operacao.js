@@ -41,6 +41,13 @@ export default class Operacao {
         }
         return resultado;
     }
+    setPorcentagem() {
+        const valorTodo = this.operacao[0];
+        const valorPorcentagem = (Number(valorTodo) * Number(this.operacao[this.length - 1])) / 100;
+        this.operacao.pop();
+        this.operacao.push(valorPorcentagem.toString());
+        return this.obterResultado();
+    }
     get ultimaPosicao() {
         return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";
     }

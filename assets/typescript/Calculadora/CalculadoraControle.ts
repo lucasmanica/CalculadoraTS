@@ -45,6 +45,7 @@ export default class CalculadoraControle {
                         this.limparTela();
                         break;
                     case "porcentagem":
+                        this.addPorcentagem();
                         break;
                     case "igual":
                         this.calcular() 
@@ -88,5 +89,8 @@ export default class CalculadoraControle {
     }
     limparTela(): void {
         this.tela.conteudo = this.operacao.limparTela(this.tela.conteudo.length);
+    }
+    addPorcentagem(): void {
+        this.tela.conteudo = this.operacao.setPorcentagem();
     }
 }
