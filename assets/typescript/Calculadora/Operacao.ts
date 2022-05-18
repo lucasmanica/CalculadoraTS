@@ -11,7 +11,16 @@ export default class Operacao {
         this.onCalculado = opts.onCalculado
     }
     limpar(): void {
-        this.operacao = [""]
+        this.operacao = []
+    }
+    limparTela(length: number): string {
+        for (let i = 0; i <= length; i++) {
+            this.operacao.pop();
+        }
+        if(this.operacao.length >= 1) {
+            return this.obterResultado()
+        }
+        return '0'
     }
     adicionar(valor: string): number {
         if (this.operacao.length === 3) {

@@ -41,6 +41,7 @@ export default class CalculadoraControle {
                         this.limpar();
                         break;
                     case "desfazer":
+                        this.limparTela();
                         break;
                     case "porcentagem":
                         break;
@@ -85,5 +86,8 @@ export default class CalculadoraControle {
     limpar() {
         this.tela.conteudo = "0";
         this.operacao.limpar();
+    }
+    limparTela() {
+        this.tela.conteudo = this.operacao.limparTela(this.tela.conteudo.length);
     }
 }

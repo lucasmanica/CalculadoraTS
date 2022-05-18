@@ -6,7 +6,16 @@ export default class Operacao {
         this.onCalculado = opts.onCalculado;
     }
     limpar() {
-        this.operacao = [""];
+        this.operacao = [];
+    }
+    limparTela(length) {
+        for (let i = 0; i <= length; i++) {
+            this.operacao.pop();
+        }
+        if (this.operacao.length >= 1) {
+            return this.obterResultado();
+        }
+        return '0';
     }
     adicionar(valor) {
         if (this.operacao.length === 3) {
