@@ -48,6 +48,14 @@ export default class Operacao {
         this.operacao.push(valorPorcentagem.toString());
         return this.obterResultado();
     }
+    setPonto() {
+        //  ['85', '+', '3']
+        const ultimoValor = this.operacao[this.length - 1];
+        const concatenarPonto = `${ultimoValor}.`;
+        this.operacao[this.length - 1] = concatenarPonto;
+        return this.operacao[this.length - 1];
+        // ['4242.']
+    }
     get ultimaPosicao() {
         return this.operacao.length ? this.operacao[this.operacao.length - 1] : "0";
     }

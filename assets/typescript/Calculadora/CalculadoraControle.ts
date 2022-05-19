@@ -36,7 +36,8 @@ export default class CalculadoraControle {
                     case "divisao":
                         this.adicionarOperador(target.dataset.valor as string);
                         break;
-                    case "ponto": 
+                    case "ponto":
+                        this.adicionarPonto();
                         break;
                     case "limpar":
                         this.limpar(); 
@@ -92,5 +93,9 @@ export default class CalculadoraControle {
     }
     addPorcentagem(): void {
         this.tela.conteudo = this.operacao.setPorcentagem();
+    }
+    adicionarPonto() {
+        this.tela.conteudo = this.operacao.setPonto();
+
     }
 }
